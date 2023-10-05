@@ -8,7 +8,7 @@ const pool = new pg.Pool({
   connectionString,
 });
 
-const res = await pool.query('SELECT * FROM authors;');
+const res = await pool.query('CREATE TABLE author_book();');
 
 // TEST the query
 console.log(res);

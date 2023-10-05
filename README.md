@@ -1,5 +1,59 @@
 # node-postgres-first-attempt
 
+# PostgreSQL Challenges with ElephantSQL
+
+## **Pre-requisites**
+
+Before diving into the challenges, ensure the following are set up:
+
+- **Node.js:** Ensure it's installed on your machine.
+- **pg and dotenv Packages:** Install via npm using the command: **`npm install pg dotenv`**.
+- **ElephantSQL Account:** Create a free account and set up a new database instance.
+
+### **Environment Variables**
+
+Environment variables are crucial for storing sensitive data like database credentials. Create a **`.env`** file in your project directory to store your ElephantSQL credentials. This **`.env`** file should never be pushed to GitHub, so ensure it's added to your **`.gitignore`** file.
+
+### **Connection String**
+
+A connection string encapsulates all the necessary information to connect to a database. Here's an example:
+
+```
+postgresql://username:password@host:port/database
+```
+
+Store your connection string as an environment variable to keep your database credentials secure. The format is a key-value pair separated by an equals sign:
+
+```
+DATABASE_URL=postgresql://username:password@host:port/database
+```
+
+## **Script Setup in package.json**
+
+Before starting with the challenges, let's set up some scripts in your **`package.json`** file to ease the running of your scripts. These scripts will utilize the **`-r`** (require) syntax to preload **`dotenv`** configuration.
+
+Open your **`package.json`** file and add the following to the **`"scripts"`** section:
+
+```json
+"scripts": {
+  "connect": "node -r dotenv/config connect.js",
+  "create-tables": "node -r dotenv/config createTables.js",
+  "drop-tables": "node -r dotenv/config dropTables.js",
+  "seed-data": "node -r dotenv/config seedData.js",
+  "reset-database": "node -r dotenv/config resetDatabase.js"
+}
+```
+
+Now, with these scripts set up, you can easily run each task using the **`npm run`** command followed by the script name, for example:
+
+```bash
+npm run connect
+```
+
+This will run the **`connect.js`** script with **`dotenv`** configuration preloaded, ensuring your environment variables are loaded correctly.
+
+Now, let's move on to the challenges.
+
 ## **Challenges**
 
 ### **1️⃣ Database Connection Script**

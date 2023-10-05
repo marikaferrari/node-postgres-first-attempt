@@ -1,23 +1,21 @@
 {
   "name": "postgres-first-attempt",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Before diving into the challenges, ensure the following are set up:",
+  "main": "index.js",
   "type": "module",
-    "scripts": {
-      "connect": "node -r dotenv/config connect.js",
-      "create-tables": "node -r dotenv/config createTables.js",
-      "drop-tables": "node -r dotenv/config dropTables.js",
-      "seed-data": "node -r dotenv/config seedData.js",
-      "reset-database": "node -r dotenv/config resetDatabase.js"
-    },
+  "scripts": {
+    "connect": "node -r dotenv/config connect.js",
+    "create-tables": "node -r dotenv/config createTables.js",
+    "drop-tables": "node -r dotenv/config dropTables.js",
+    "seed-data": "node -r dotenv/config seedData.js",
+    "reset-database": "node -r dotenv/config resetDatabase.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "pg": "^8.11.3"
-  },
-  "devDependencies": {
-    "dotenv": "^16.3.1"
   }
 }
